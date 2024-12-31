@@ -65,6 +65,7 @@ while IFS= read -r repo; do
         git checkout -b "$commit_message"
         git stash pop
         print_okay "  creating commit: " "$commit_message"
+        git add .
         git commit -m "$commit_message"
     else
         print_okay "  No changes to commit."
