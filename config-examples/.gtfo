@@ -1,0 +1,5 @@
+home_dir=("/home/$(whoami)")
+
+commit_message="${time}_emergancy_gtfo_backup"
+
+exclude_dirs=("$home_dir/.local")
