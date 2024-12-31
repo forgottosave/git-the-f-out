@@ -23,6 +23,34 @@ print_error() {
     printf "${TEXT_RED}${1}${TEXT_DEFAULT}${2}\n"
 }
 
+VERSION="gtfo 0.1.0"
+HELP="${TEXT_BOLD}Git the f*ck out${TEXT_DEFAULT}
+House burning down? Better git add, commit, push and git the f*** out. Or use git-the-f-out directly :)
+https://github.com/forgottosave/git-the-f-out
+
+${TEXT_BOLD}Options:          Description:${TEXT_DEFAULT}
+-h, --help        Display help page.
+--version         Display version.
+"
+
+# ARGUMENT PARSING
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+        printf "$HELP"
+        exit 0
+    ;;
+    --version)
+        printf "$VERSION\n"
+        exit 0
+    ;;
+    *)
+        echo "Unknown option: $1"
+        exit 1
+    ;;
+  esac
+done
+
 # SETUP VARIABLES & HELPERS
 
 home_dir=("/home/$(whoami)")
